@@ -54,15 +54,40 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  if( array.length === 0){
+    return undefined;
+  }
+  else {
+    return array[array.length -1];
+  }
 }
+/////  ternary: i like using this  /////
+// function getLast( array ) {
+//   return array.length === 0 ? undefined : array[array.length -1];
+// }
+//
+//test to call function
+let list = [ 'a', 'b', 'c', 'd'];
+let emptyList = [];
+console.log('the value is d:', getLast(list));
+console.log('no list, so it should say undefined', getLast(emptyList));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for( let i=0; i<array.length; i++){
+    if( array[i] === value){
+      return true;
+    }
+  }
+  return false;  
 }
+
+// test to call the function
+let list1 = [1,2,3,4,5];
+console.log('should say true', find(4, list1));
+console.log('should say false', find(711, list1));
 
 // ----------------------
 // Stretch Goals
