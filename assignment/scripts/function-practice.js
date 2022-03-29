@@ -106,18 +106,36 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 console.log('another test - should say false', isFirstLetter('c', 'bacon'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( addingArray ) {
   let sum = 0
   // TODO: loop to add items
+  for( let i=0; i<addingArray.length; i++){
+    sum = addingArray[i] + sum;
+  }
   return sum;
 }
+//test to call function
+let adding = [10,15,20,5];
+console.log('adding array (10+15+20+5):',sumAll(adding));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
+function posNum(array){
+  let array1 = [];
+  for( let i=0; i<array.length; i++){
+    if( array[i] > 0){
+      array1.push(array[i]);
+    }
+  }
+  return array1;
+}
 
-
-
+//test to call function
+let pos = [3,6,-5,-2,17];
+let neg = [-2,-4,-34,-6];
+console.log('test to show only positive number:', posNum(pos));
+console.log('test to show empty arry:', posNum(neg));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
